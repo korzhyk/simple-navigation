@@ -21,7 +21,7 @@ module SimpleNavigation
   class ItemAdapter
     extend Forwardable
     
-    def_delegators :item, :key, :name, :url
+    def_delegators :item, :key, :title, :url
 
     attr_reader :item
 
@@ -41,7 +41,7 @@ module SimpleNavigation
 
     # Converts this Item into a SimpleNavigation::Item
     def to_simple_navigation_item(item_container)
-      SimpleNavigation::Item.new(item_container, key, name, url, options, items)
+      SimpleNavigation::Item.new(item_container, key, title, url, options, items)
     end
 
     protected
